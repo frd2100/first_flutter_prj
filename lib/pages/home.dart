@@ -7,19 +7,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(context),
+      appBar: appBar(),
     );
   }
 
-  AppBar appBar(BuildContext context) {
+  AppBar appBar() {
     return AppBar(
-      title: Container(
-        height: kToolbarHeight,
-        child: SvgPicture.asset(
-          'assets/logos/WhenICried.svg',
-          width: MediaQuery.of(context).size.width * 0.8,
-          height: kToolbarHeight,
-        ),
+      title: const Text(
+        'When I Cried',
+        style: TextStyle(
+            fontFamily: 'Satisfy',
+            color: Colors.black,
+            fontSize: 18,
+            fontWeight: FontWeight.bold),
       ),
       centerTitle: true,
       backgroundColor: Colors.deepPurple.shade200,
@@ -29,15 +29,15 @@ class HomePage extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.all(10),
           alignment: Alignment.center,
-          decoration: BoxDecoration(
-              color: Colors.deepPurple.shade200,
-              borderRadius: BorderRadius.circular(10)),
           child: SvgPicture.asset(
             'assets/icons/chevron_left.svg',
             height: 20,
             width: 20,
             color: Colors.black,
           ),
+          decoration: BoxDecoration(
+              color: Colors.deepPurple.shade200,
+              borderRadius: BorderRadius.circular(10)),
         ),
       ),
       actions: [
@@ -47,15 +47,15 @@ class HomePage extends StatelessWidget {
             margin: EdgeInsets.all(10),
             alignment: Alignment.center,
             width: 37,
-            decoration: BoxDecoration(
-                color: Colors.deepPurple.shade200,
-                borderRadius: BorderRadius.circular(10)),
             child: SvgPicture.asset(
               'assets/icons/more_vert.svg',
               height: 20,
               width: 20,
               color: Colors.black,
             ),
+            decoration: BoxDecoration(
+                color: Colors.deepPurple.shade200,
+                borderRadius: BorderRadius.circular(10)),
           ),
         ),
       ],
