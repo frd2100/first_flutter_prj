@@ -7,16 +7,19 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: appBar(),
+      appBar: appBar(context),
     );
   }
 
-  AppBar appBar() {
+  AppBar appBar(BuildContext context) {
     return AppBar(
-      title: const Text(
-        'Breakfast',
-        style: TextStyle(
-            color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),
+      title: Container(
+        height: kToolbarHeight,
+        child: SvgPicture.asset(
+          'assets/logos/WhenICried.svg',
+          width: MediaQuery.of(context).size.width * 0.8,
+          height: kToolbarHeight,
+        ),
       ),
       centerTitle: true,
       backgroundColor: Colors.deepPurple.shade200,
@@ -26,11 +29,15 @@ class HomePage extends StatelessWidget {
         child: Container(
           margin: EdgeInsets.all(10),
           alignment: Alignment.center,
-          child: SvgPicture.asset('assets/icons/chevron_left.svg',
-              height: 20, width: 20),
           decoration: BoxDecoration(
               color: Colors.deepPurple.shade200,
               borderRadius: BorderRadius.circular(10)),
+          child: SvgPicture.asset(
+            'assets/icons/chevron_left.svg',
+            height: 20,
+            width: 20,
+            color: Colors.black,
+          ),
         ),
       ),
       actions: [
@@ -40,11 +47,15 @@ class HomePage extends StatelessWidget {
             margin: EdgeInsets.all(10),
             alignment: Alignment.center,
             width: 37,
-            child: SvgPicture.asset('assets/icons/more_dots.svg',
-                height: 20, width: 20),
             decoration: BoxDecoration(
                 color: Colors.deepPurple.shade200,
                 borderRadius: BorderRadius.circular(10)),
+            child: SvgPicture.asset(
+              'assets/icons/more_vert.svg',
+              height: 20,
+              width: 20,
+              color: Colors.black,
+            ),
           ),
         ),
       ],
